@@ -24,7 +24,7 @@
 |upwd|varchar2(100)||否||||
 |user_name|varchar2(100)||否||||
 |user_phone|varchar2(100)||否||||
-|user_site|varchar2(100)||是|||系统自动获取|
+|user_site|varchar2(100)||是||||
 
 <h3>1.3借书表</h3>
 
@@ -32,6 +32,7 @@
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |user_id|varchar2(100)|外键|否||||
 |book_id|varchar2(100)|外键|否||||
+|book_count|varchar2(100)||否||||
 |lend_time|datetime(0)||否|||系统自动获取|
 
 <h3>1.4还书表</h3>
@@ -44,6 +45,49 @@
 
 <h2>2.界面设计</h2>
 
-<h3>2.1登录界面设计</h3>
+<h3>2.1借书界面设计</h3>
 
-<h3>2.2借书界面设计</h3>
+链接：<https://NMSL-MC.github.io/is_analysis_pages/test5/mc/login.html>
+
+![test5](1.png)
+
+![test5](2.png)
+
+#### 1 登录
+
++ 功能：用于用户登录
++ 请求地址： <https://NMSL-MC.github.io/is_analysis_pages/test5/mc/login.html>
++ 请求方法：POST
++ 请求参数：
+
+|  参数名称  |  必填  |  说明  |
+|:---:|:---:|:---:|
+|uname|是|用于验证身份|
+|upwd|是|用于验证身份|
+
+
++ 返回实例：
+
+```
+{
+	"info": "欢迎登录",
+		"data": {
+				"user_name":"***",
+				"book_name":"***",
+                "book_type":"***",
+                "book_count":"***",
+				},
+	"code":200
+}
+```
+
++ 返回参数说明：
+
+|参数名|说明|
+|:---|:---:|
+|user_name|用户名称|
+|book_name|图书标题|
+|book_type|图书类型|
+|book_count|图书余量|
+
+
